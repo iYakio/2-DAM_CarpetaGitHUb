@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Proyecto_Spotify_2ºDAM_Multimedia</string>
+    <string name="Mi_lista">Lista de Avicii</string>
+    <string name="Numero_canciones">8 canciones - 27 minutos</string>
+    <string name="Avicii1yminuto">Avicii ( 4:12 )</string>
+    <string name="CancionNombre1">Wake me up</string>
+    <string name="CancionNombre2">Hey Brother</string>
+    <string name="Avicii2yminuto">Avicii ( 4:11 )</string>
+    <string name="CancionNombre3">The Nights</string>
+    <string name="Avicii3yminuto">Avicii ( 2:54 )</string>
+    <string name="CancionNombre4">I could be the one</string>
+    <string name="Avicii4yminuto">Avicii vs Nicky Romero ( 3:13 )</string>
+    <string name="iconoInicio">Inicio</string>
+    <string name="iconoBuscar">Buscar</string>
+    <string name="iconoBiblioteca">Biblioteca</string>
+
+</resources>

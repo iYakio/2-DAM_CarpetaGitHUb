@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Colornegro"
+    android:backgroundTint="@color/Colornegro"
+    android:foregroundTint="@color/morado"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="100dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardCancion4"
+                android:layout_width="412dp"
+                android:layout_height="103dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="@color/morado"
+                app:cardElevation="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/Cancion_1txt"
+                        android:layout_width="135dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/Colornegro"
+                        android:foregroundTint="@color/Colornegro"
+                        android:text="@string/CancionNombre1"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageWMU"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Arista_1txt"
+                        android:layout_width="96dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="12dp"
+                        android:foregroundTint="@color/Colornegro"
+                        android:text="@string/Avicii1yminuto"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageWMU"
+                        app:layout_constraintTop_toBottomOf="@+id/Cancion_1txt"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <ImageView
+                        android:id="@+id/imageWMU"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="310dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/wakemeup" />
+
+                    <ImageView
+                        android:id="@+id/imageBola1"
+                        android:layout_width="28dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="60dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/outline_brightness_1_24" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardCancion3"
+                android:layout_width="412dp"
+                android:layout_height="103dp"
+                android:background="@color/black"
+                android:backgroundTint="@color/morado">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageHB"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="310dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/hey_brother" />
+
+                    <TextView
+                        android:id="@+id/Cancion_2txt"
+                        android:layout_width="135dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/Colornegro"
+                        android:foregroundTint="@color/Colornegro"
+                        android:text="@string/CancionNombre2"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageHB"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Artista_2"
+                        android:layout_width="97dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="12dp"
+                        android:foregroundTint="@color/Colornegro"
+                        android:text="@string/Avicii2yminuto"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageHB"
+                        app:layout_constraintTop_toBottomOf="@+id/Cancion_2txt" />
+
+                    <ImageView
+                        android:id="@+id/imageBola2"
+                        android:layout_width="28dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="60dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/outline_brightness_1_24" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardCancion1"
+                android:layout_width="412dp"
+                android:layout_height="103dp"
+                android:background="@color/morado"
+                android:backgroundTint="@color/morado">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageBola3"
+                        android:layout_width="28dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="60dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.47"
+                        app:srcCompat="@drawable/outline_brightness_1_24" />
+
+                    <ImageView
+                        android:id="@+id/imageTN"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="310dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/the_nights" />
+
+                    <TextView
+                        android:id="@+id/Cancion_3txt"
+                        android:layout_width="135dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/Colornegro"
+                        android:foregroundTint="@color/Colornegro"
+                        android:text="@string/CancionNombre3"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageTN"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Artista_3txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:foregroundTint="@color/Colornegro"
+                        android:text="@string/Avicii3yminuto"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageTN"
+                        app:layout_constraintTop_toBottomOf="@+id/Cancion_3txt" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardCancion2"
+                android:layout_width="412dp"
+                android:layout_height="103dp"
+                android:background="@color/morado"
+                android:backgroundTint="@color/morado">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageICBO"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="310dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/i_could_be_the_one" />
+
+                    <TextView
+                        android:id="@+id/Cancion_4txt"
+                        android:layout_width="207dp"
+                        android:layout_height="31dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:foregroundTint="@color/Colornegro"
+                        android:text="@string/CancionNombre4"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toEndOf="@id/imageICBO"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Artista_4txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:foregroundTint="@color/Colornegro"
+                        android:text="@string/Avicii4yminuto"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageICBO"
+                        app:layout_constraintTop_toBottomOf="@+id/Cancion_4txt" />
+
+                    <ImageView
+                        android:id="@+id/imageBola4"
+                        android:layout_width="28dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="60dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.426"
+                        app:srcCompat="@drawable/outline_brightness_1_24" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <include
+                android:id="@+id/CardCancion5"
+                layout="@layout/item_cancion" />
+
+            <include
+                android:id="@+id/CardCancion6"
+                layout="@layout/item_cancion" />
+
+            <include
+                android:id="@+id/CardCancion7"
+                layout="@layout/item_cancion" />
+
+            <include
+                android:id="@+id/CardCancion8"
+                layout="@layout/item_cancion" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/txtNombrelista"
+        android:layout_width="157dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="12dp"
+        android:foregroundTint="@color/white"
+        android:text="@string/Mi_lista"
+        android:textColor="@color/morado"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/nestedScrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvicii"
+        app:layout_constraintVertical_bias="0.255" />
+
+    <ImageView
+        android:id="@+id/imgAvicii"
+        android:layout_width="234dp"
+        android:layout_height="133dp"
+        android:layout_marginBottom="68dp"
+        android:background="@color/Colornegro"
+        android:backgroundTint="@color/Colornegro"
+        app:layout_constraintBottom_toTopOf="@+id/nestedScrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092"
+        app:srcCompat="@drawable/avicii" />
+
+    <TextView
+        android:id="@+id/txtNumeroCanciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="25dp"
+        android:foregroundTint="@color/white"
+        android:text="@string/Numero_canciones"
+        android:textColor="@color/morado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txtNombrelista"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvicii" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="106dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nestedScrollView2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageLupa"
+                android:layout_width="57dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="176dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.253"
+                app:srcCompat="@drawable/baseline_search_24" />
+
+            <ImageView
+                android:id="@+id/imageVolver"
+                android:layout_width="57dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageLupa"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.253"
+                app:srcCompat="@drawable/outline_360_24" />
+
+            <ImageView
+                android:id="@+id/imageBiblioteca"
+                android:layout_width="57dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.979"
+                app:layout_constraintStart_toEndOf="@+id/imageLupa"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.253"
+                app:srcCompat="@drawable/outline_article_shortcut_24" />
+
+            <TextView
+                android:id="@+id/bajoIniciotxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:foregroundTint="@color/white"
+                android:text="@string/iconoInicio"
+                android:textColor="@color/morado"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageVolver"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/bajoBuscartxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="104dp"
+                android:foregroundTint="@color/white"
+                android:text="@string/iconoBuscar"
+                android:textColor="@color/morado"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bajoIniciotxt"
+                app:layout_constraintTop_toBottomOf="@+id/imageLupa"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/bajoBibliotecatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:foregroundTint="@color/white"
+                android:text="@string/iconoBiblioteca"
+                android:textColor="@color/morado"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageBiblioteca"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
