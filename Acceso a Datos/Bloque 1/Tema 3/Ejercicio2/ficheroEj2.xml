@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE torneos [
+<!ELEMENT torneos (torneo+)>
+<!ELEMENT torneo (nombre, jugadores)>
+<!ATTLIST torneo pais CDATA #REQUIRED>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT jugadores (jugador+)>
+
+<!ELEMENT jugador (nombreJugador, ranking, nacionalidad, edad)>
+
+<!ELEMENT nombreJugador (#PCDATA)>
+<!ELEMENT ranking (#PCDATA)>
+<!ELEMENT nacionalidad (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+]>
+
+<torneos>
+
+    <torneo pais="España">
+        <nombre>Madrid Open</nombre>
+
+        <jugadores>
+            <jugador>
+                <nombreJugador>Carlos Alcaraz</nombreJugador>
+                <ranking>2</ranking>
+                <nacionalidad>España</nacionalidad>
+                <edad>23</edad>
+            </jugador>
+
+            <jugador>
+                <nombreJugador>Novak Djokovic</nombreJugador>
+                <ranking>5</ranking>
+                <nacionalidad>Serbia</nacionalidad>
+                <edad>39</edad>
+            </jugador>
+        </jugadores>
+
+    </torneo>
+
+    <torneo pais="Francia">
+        <nombre>Roland Garros</nombre>
+
+        <jugadores>
+            <jugador>
+                <nombreJugador>Jannik Sinner</nombreJugador>
+                <ranking>1</ranking>
+                <nacionalidad>Italia</nacionalidad>
+                <edad>25</edad>
+            </jugador>
+
+            <jugador>
+                <nombreJugador>Daniil Medvedev</nombreJugador>
+                <ranking>4</ranking>
+                <nacionalidad>Rusia</nacionalidad>
+                <edad>30</edad>
+            </jugador>
+        </jugadores>
+
+    </torneo>
+
+</torneos>

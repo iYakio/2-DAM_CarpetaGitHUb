@@ -1,0 +1,7 @@
+=== Formulario de Matriculacion ===
+Nombre y Apellidos: Adrian
+Email: adriancuevas.davante@org
+Fecha de Nacimiento: 11 / 12 /2000
+Genero: Masculino
+Titulación de Acceso: Grado Medio
+Observaciones: Buen chaval

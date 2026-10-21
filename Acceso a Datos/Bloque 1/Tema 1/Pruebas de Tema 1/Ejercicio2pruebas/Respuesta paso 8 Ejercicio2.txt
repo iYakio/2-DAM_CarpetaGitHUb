@@ -1,0 +1,1 @@
+Si intentamos utilizar el FileReader o FileWriter en este ejercicio, comprobaremos que no será posible hacerlo, ya que FileReader y FileWriter no pueden leer textos o códigos en binario por lo cual no puede plasmarlos en otras plataformas, si fuera u texto plano sí que podría hacerlo sin problema
