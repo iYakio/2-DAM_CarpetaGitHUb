@@ -9,5 +9,6 @@ public class App {
         temp.start();
         pre.start();
         hum.start();
+        
     }
 }
