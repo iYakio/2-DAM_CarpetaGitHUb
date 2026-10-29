@@ -1,0 +1,36 @@
+Creame primero una guia de estilo en texto plano en formato .md de la siguiente aplicación
+
+
+
+Necesito un diseño de aplicación para poder controlar el stock para hacer pedidos a proveedores y controlar el stock que estén en el mismo restaurante y de pedidos a cocina de un restaurante. Las personas que usarán esta aplicación será por una parte el Jefe y gerente del restaurante, por otra parte el cocinero y por otra última parte estarán los camareros, más adelante te desglosaré cada uno 
+
+
+
+Esta aplicación consta de una pantalla inicial con el nombre de nuestra aplicación que su nombre será "RestApp", un inicio de sesión con un nombre, contraseña e iniciar sesión recalcado justo debajo, después de esto, saldrán dos opciones más en pequeño por si el usuario (Jefe/Gerente - camarero - cocinero) no se ha registrado todavía y pueda registrarse y también la otra opción que ponga "He olvidado mi contraseña" y pueda ser pulsada para que esta misma se conecte a un email vinculado para recuperar dicha contraseña
+
+
+
+ Administración: Esta parte esta dirigida al jefe y gerente del restaurante que podrá acceder a esta vista de la aplicación, cuando entra a la aplicación verá una titulo grande arriba que muestre la sesión en la cual ha iniciado que en este caso es "Administrador" y en la parte de abajo saldrán las dos opciones una de ellas será el botón Salir, que le hará salirse de esa sesión que ha iniciado y otra de ellas será la de Stock y pedidos, esta opción al pulsarla te llevará a poder mirar el stock que hay ahora mismo en su restaurante, actualizado por la parte de cocina, verá arriba como titulo "Stock" y debajo saldrá una lista grande dentro de una barra "scroll" donde verá todos los ingredientes y un número que muestre la cantidad que hay de cada uno, al lado de cada ingrediente, habrá una figura de un "+" para que el Adminstrador "Jefe o Gerente" puedan contactar con un proveedor de confianza, al pulsar el botón de "+" se meterá en otra pantalla la cual tendrá como titulo arriba "Pedidos" y justo debajo saldrá el producto que ha elegido con la muestra del stock actual justo debajo, la mitad de la pantalla estará cubierta por puntitos arriba y abajo y en medio habrán dos opciones nuevas:
+
+
+
+
+
+
+
+Hacer pedido en este momento:   Al pulsar en esta opción se abrirá otra pantalla nueva en la cual saldrá como titulo "Hacer pedido" justo debajo saldrá el proveedor de confianza y también debajo de este mismo le hará una pregunta al administrador de cuanto quiere que sea el pedido de ingrediente, donde podrá insertar un numero en un cuadrado. Cuando se haya escrito el numero, verá debajo un botón que pondrá "Ver carrito", al pulsar esta opción aparecerá otra pantalla en la cual se verá arriba como titulo "Carrito", justo debajo rodeado por puntitos como separación y dentro de esos puntitos estarán los ingredientes que hemos decidido comprar al proveedor y si estamos seguros le daremos a "confirmar pedido " y este pedido se le enviará a este proveedor.
+
+
+
+
+
+
+
+
+
+Hacer pedido programado: Al pulsar este otro botón aparecerá una pantalla nueva en la cual aparecerá un titulo arriba del todo que pondrá "Pedido programado", justo debajo se verá el proveedor de confianza, con un texto debajo que pondrá "Fecha y hora del pedido" debajo de este texto habrán dos opciones obligatorias, una a la izquierda y otra a la derecha, en la izquierda, mediante un calendario elegirá el día respetando los dias o no laborables y en la derecha dentro de la otra opción, el administrador escribirá una hora y minuto del día donde, junto a la fecha del calendario, se efectuará la entrega del pedido por el proveedor. En la parte de abajo misma se verá un texto que pondrá ¿de cuánto será el pedido? con un cuadrado el cual se le podrá insertar un numero, después de hacer esto el administrador verá debajo un botón que pone "ver carrito" y al darle en él verá el mismo carrito que en la parte de "hacer pedido en este momento" compartirán los datos para que así puedan hacer el pedido a la vez, cada uno insertado de su forma correspondiente en cada una de las dos opciones si es necesario 
+
+
+Camarero:  Al ingresar mediante nombre y contraseña el dicho camarero, le aparecerá un titulo en el que pondrá "Camarero", justo debajo de estos aparecerán tres opciones, una de ellas será la de Salir la cual al pulsarla le hará salir de la sesión que ha iniciado, la segunda opción será la de "Stock de cocina" el cual al pulsar en ella verá una pantalla nueva el cual mostrará de forma actualizada con el stock en cocina los platos que no pueden ser ofrecidos a los clientes, por ejemplo, si faltase en stock en cocina pasta de spaguetti, saldrá en esta misma pantalla una notificación de los platos que llevan este ingrediente los cuales no se podrán realizar, esta notificación está conectada con cocina para que el camarero pueda estar al tanto de lo que puede ofrecer o no
+
+La otra opción restante es "Ver platos en la carta", al pulsar esta opción se abrirá una pantalla nueva con el titulo "Platos en la carta", en ella aparecerán los platos que se han ofrecido, se pueden ofrecer por el stock de cocina y han pedido los clientes, justo debajo del titulo de "Platos en la carta" aparecerá lo s platos que te he mencionado antes. Cuando termine de elegir cada una, le dará a "mandar a cocina", este botón enviará los platos seleccionados a una panta
