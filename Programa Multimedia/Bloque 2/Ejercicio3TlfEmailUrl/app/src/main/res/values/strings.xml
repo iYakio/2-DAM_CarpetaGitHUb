@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Ejercicio3TlfEmailUrl</string>
+    <string name="Email">Email</string>
+    <string name="Tlf">Teléfono</string>
+    <string name="URL">Dirección URL</string>
+
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ejercicio4</string>
+    <string name="AreadeTexto">Nombre</string>
+    <string name="AreadeApellido">Apellido</string>
+</resources>
