@@ -374,3 +374,54 @@ FROM compra c
 JOIN proveedor pr ON c.id_proveedor = pr.id_proveedor
 GROUP BY pr.nombre
 ORDER BY total_gastado DESC;
+
+
+
+
+
+-- 1.-
+select nombre, stock from producto where stock < 30 order by stock;
+-- 2.-
+select * from cliente where ciudad LIKE 'M%'; 
+-- 3.-
+select * from cliente where email IS NULL order by nombre;
+-- 4.-
+select * from producto where marca = 'Logitech' and precio < 14;
+-- 5.- 
+UPDATE producto set precio = precio * 1.10 where id_producto IN (5, 8);
+select * from producto where id_producto IN (5, 8);
+
+-- 6.
+INSERT INTO proveedor (nombre, ciudad, telefono) VALUES (
+'Kingston', 'Sevilla', '954000005'
+
+);
+
+INSERT INTO compra (id_proveedor, id_producto, fecha, cantidad, coste) VALUES (
+last_insert_id(), '8', '2026-10-12', 100, 5.00
+);
+
+-- 7.-
+select pr.nombre AS Proveedor, SUM(c.cantidad * c.coste) AS total_gastado from proveedor pr join compra c on (pr.id_proveedor = c.id_proveedor) group by pr.nombre order by total_gastado desc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
