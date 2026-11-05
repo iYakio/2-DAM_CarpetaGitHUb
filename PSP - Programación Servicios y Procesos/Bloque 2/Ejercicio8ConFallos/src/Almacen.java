@@ -9,12 +9,15 @@ public class Almacen {
         this.contador = 0;
     }
 
+        // esto es una sección critica es decir creemos que va a dar fallo
     public void insertarProducto(String productoID){
         if (this.contador <= 9) {
             this.almacen[this.contador] = productoID;
             this.contador++;
         }
     }
+
+        // esto es una sección critica es decir creemos que va a dar fallo
         public void eliminarProducto(){
             if (this.contador > 0) {
                 this.contador--;
