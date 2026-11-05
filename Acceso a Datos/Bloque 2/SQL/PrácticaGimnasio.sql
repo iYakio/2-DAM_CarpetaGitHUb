@@ -160,6 +160,7 @@ DELETE FROM monitor where id_monitor = 1;
 DELETE FROM monitor where id_monitor = 3;
 -- Sí permite borrar el numero 3 y no el numero 1, porque una vez más, el id_monitor 3 no tenía ninguan foreign key que dependiese de ella
 
+TRUNCATE TABLE nombre_tabla;
 
 
 
