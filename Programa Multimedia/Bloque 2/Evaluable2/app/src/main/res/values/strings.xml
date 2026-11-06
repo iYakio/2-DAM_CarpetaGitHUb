@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Evaluable 2</string>
+    <string name="Juego_de_preguntas">Juego de preguntas</string>
+    <string name="Tu_nombre">Tu nombre</string>
+    <string name="Jugar">Jugar</string>
+    <string name="Ver_ranking">Ver ranking</string>
+    <string name="Titulo"></string>
+</resources>

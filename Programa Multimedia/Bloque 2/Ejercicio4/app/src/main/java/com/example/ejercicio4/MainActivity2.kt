@@ -22,7 +22,7 @@ class MainActivity2 : AppCompatActivity() {
         private Button boton_volver;
         private EditText textoNombre, textoApellido;
 
-        boton_volver = findViewById();
+        button_volver = findViewById();
 
 
 

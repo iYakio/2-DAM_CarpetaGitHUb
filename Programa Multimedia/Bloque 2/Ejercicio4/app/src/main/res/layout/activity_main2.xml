@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Txt_Nombre2" />
 
     <Button
-        android:id="@+id/button_volver_inicio_sesion"
+        android:id="@+id/button_volver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
