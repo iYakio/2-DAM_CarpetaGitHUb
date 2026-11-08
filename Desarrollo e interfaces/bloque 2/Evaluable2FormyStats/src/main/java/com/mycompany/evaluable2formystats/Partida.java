@@ -20,7 +20,7 @@ public class Partida {
         return fecha;
     }
 
-    public String getVideojuego() { // <-- Este es el método que busca
+    public String getVideojuego() {
         return videojuego;
     }
 

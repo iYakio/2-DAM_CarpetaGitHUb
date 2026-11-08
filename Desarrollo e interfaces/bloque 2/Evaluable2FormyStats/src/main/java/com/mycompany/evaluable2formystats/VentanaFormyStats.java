@@ -136,7 +136,8 @@ public class VentanaFormyStats extends JFrame {
         JPanel panelFormulario = new JPanel(new MigLayout("insets 5", "[][grow]", "[]10[]10[]10[grow]"));
         
         comboVideojuego = new JComboBox<>(new String[]{"NFS Pro Street", "Left 4 dead 2", "Tekken 8", "Fortnite", "Burnout 3"});
-        spinnerVictorias = new JSpinner(new SpinnerNumberModel(2, 1, 30, 1));
+        spinnerVictorias = new JSpinner(new SpinnerNumberModel(1, 1, 30, 1));
+        
         JButton buttonFormAnadir = new JButton(actionAnadir);
         
         modeloLista = new DefaultListModel<>();
@@ -189,6 +190,15 @@ public class VentanaFormyStats extends JFrame {
         menuBar.add(menuVer);
         
         setJMenuBar(menuBar);
+        
+        toolBar.setFloatable(false);
+        toolBar.add(buttonNuevoBarra);
+        toolBar.add(buttonAbrirBarra);
+        toolBar.add(buttonGuardarBarra);
+        toolBar.addSeparator();
+        toolBar.add(buttonAnadirBarra);
+        toolBar.add(buttonInformeBarra);
+    
         add(toolBar, BorderLayout.NORTH);
         add(panelCentral, BorderLayout.CENTER);
         add(panelEstado, BorderLayout.SOUTH);
@@ -321,12 +331,15 @@ public class VentanaFormyStats extends JFrame {
     }
 
     private void cambiarTema() {
-        oscuro = !oscuro;
-        if (oscuro) {
-            FlatDarkLaf.setup();
-        } else {
-            FlatLightLaf.setup();
-        }
-        FlatDarkLaf.updateUI();
+    oscuro = !oscuro;
+    if (oscuro) {
+        FlatDarkLaf.setup();
+    } else {
+        FlatLightLaf.setup();
     }
+    FlatDarkLaf.updateUI();
+    
+    // Forzar actualización de colores en el panel de dibujo
+    panelDibujo.repaint(); 
+}
 }
