@@ -1,0 +1,16 @@
+Promt para generar Informes con IA
+
+Genera una plantilla .jrxml para JasperReports 7.0.1 ( usa el formato nuevo de JasperREports 7, no el de la versión 6). El informe debe mostrar el nombre, dirección y teléfono de un usuario que le pasamos desde Java como parámetro
+
+ORIGEN DE LOS DATOS
+- Solo parámetros que pasamos desde Java, sin filas ni BBDD
+
+DATOS
+- Parámetros: NombreUsuario (String) DireccionUsuario(String), TelefonoUsario(String)
+- Campos: ninguno. Variables: ninguno
+
+DISEÑO
+- Title: <<Datos del usuario>>, grande y en negrita.
+- Detail: tres filas en etiqueta y valor: <<Nombre:>>, <<Dirección:>>, <<Teléfono:>>.
+- Page Footer: a la izquierda <<Davante Jaén>>; a la derecha <<Informe generado el dd/MM/yyy  las HH:mm>>
+	con la fecha y hora actuales, calculada en la propia expresión del TextField
