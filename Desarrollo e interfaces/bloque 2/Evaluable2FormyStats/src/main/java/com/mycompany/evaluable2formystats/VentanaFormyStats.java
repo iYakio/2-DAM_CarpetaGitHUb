@@ -32,19 +32,15 @@ import javax.swing.KeyStroke;
 import javax.swing.SpinnerNumberModel;
 import net.miginfocom.swing.MigLayout;
 
-/**
- * Ventana principal que integra el menú, barra de herramientas,
- * formulario con JComboBox y JSpinner, lista de registros inferior y panel de dibujo independiente.
- * @author iYaki
- */
+
 public class VentanaFormyStats extends JFrame {
     
     private boolean oscuro = false;
     
-    // Objeto único que almacena todos los datos de partidas
+    
     private Partidas gestorPartidas = new Partidas();
     
-    // Acciones compartidas (Menú y Barra de herramientas)
+    
     private Action actionNuevo = new AbstractAction("Nuevo") {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -87,7 +83,7 @@ public class VentanaFormyStats extends JFrame {
         }
     };
 
-    // Menú principal
+    
     private JMenuBar menuBar = new JMenuBar();
     
     private JMenu menuArchivo = new JMenu("Archivo");
@@ -103,7 +99,7 @@ public class VentanaFormyStats extends JFrame {
     private JMenu menuVer = new JMenu("Ver");
     private JMenuItem menuItemCambiarTema = new JMenuItem(actionCambiarTema);
     
-    // Barra de herramientas
+    
     private JToolBar toolBar = new JToolBar();
     private JButton buttonNuevoBarra = new JButton(actionNuevo);
     private JButton buttonAbrirBarra = new JButton(actionAbrir);
@@ -111,10 +107,10 @@ public class VentanaFormyStats extends JFrame {
     private JButton buttonAnadirBarra = new JButton(actionAnadir);
     private JButton buttonInformeBarra = new JButton(actionGenerarInforme);
     
-    // Barra de estado inferior
+    
     private JLabel labelEstado = new JLabel();
     
-    // Componentes del formulario y dibujo
+    
     private JComboBox<String> comboVideojuego;
     private JSpinner spinnerVictorias;
     private DefaultListModel<String> modeloLista;
@@ -125,14 +121,14 @@ public class VentanaFormyStats extends JFrame {
         super("Mis partidas de videojuegos");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        // Cargar datos de ejemplo iniciales (mínimo 5 registros)
+        
         cargarDatosEjemplo();
         
-        // Layout principal
+        
         setLayout(new BorderLayout());
         JPanel panelCentral = new JPanel(new MigLayout("insets 15, fill", "[320!][grow,fill]", "[grow,fill]"));
         
-        // --- Formulario (Izquierda) con MigLayout ---
+        
         JPanel panelFormulario = new JPanel(new MigLayout("insets 5", "[][grow]", "[]10[]10[]10[grow]"));
         
         comboVideojuego = new JComboBox<>(new String[]{"NFS Pro Street", "Left 4 dead 2", "Tekken 8", "Fortnite", "Burnout 3"});
@@ -154,18 +150,18 @@ public class VentanaFormyStats extends JFrame {
         panelFormulario.add(buttonFormAnadir, "span 2, align right, wrap");
         panelFormulario.add(scrollLista, "span 2, grow, wrap");
         
-        // --- Panel de Dibujo independiente (Derecha) ---
+        
         panelDibujo = new PanelDibujo(gestorPartidas);
         
         panelCentral.add(panelFormulario, "cell 0 0");
         panelCentral.add(panelDibujo, "cell 1 0");
         
-        // Barra de estado inferior
+        
         JPanel panelEstado = new JPanel(new MigLayout("insets 6 12 6 8", "[grow]", ""));
         panelEstado.add(labelEstado, "align left");
         actualizarBarraEstado();
         
-        // Atajos de teclado
+        
         menuItemNuevo.setAccelerator(KeyStroke.getKeyStroke("control N"));
         menuItemAbrir.setAccelerator(KeyStroke.getKeyStroke("control O"));
         menuItemGuardar.setAccelerator(KeyStroke.getKeyStroke("control S"));
@@ -173,7 +169,7 @@ public class VentanaFormyStats extends JFrame {
         menuItemCambiarTema.setAccelerator(KeyStroke.getKeyStroke("control T"));
         menuItemSalir.setAccelerator(KeyStroke.getKeyStroke("control Q"));
         
-        // Construcción de menús y barra de herramientas
+       
         menuArchivo.add(menuItemNuevo);
         menuArchivo.add(menuItemAbrir);
         menuArchivo.add(menuItemGuardar);
@@ -203,15 +199,15 @@ public class VentanaFormyStats extends JFrame {
         add(panelCentral, BorderLayout.CENTER);
         add(panelEstado, BorderLayout.SOUTH);
         
-        // Eventos
+        
         menuItemSalir.addActionListener(e -> dispose());
         
-        // Dimensiones de la ventana
+        
         setSize(920, 540);
         setLocationRelativeTo(null);
     }
 
-    /** Carga datos iniciales de fábrica (5 registros predeterminados). */
+    
     private void cargarDatosEjemplo() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         gestorPartidas.anadir(new Partida(LocalDate.parse("02/11/2026", formatter), "NFS Pro Street", 3));
@@ -221,40 +217,40 @@ public class VentanaFormyStats extends JFrame {
         gestorPartidas.anadir(new Partida(LocalDate.parse("04/11/2026", formatter), "Burnout 3", 2));
     }
 
-    /** Restablece el formulario y borra las partidas añadidas volviendo al estado de fábrica de los 5 datos. */
+    
     private void limpiarFormulario() {
-        // 1. Limpiar los controles de entrada del formulario
+       
         if (comboVideojuego.getItemCount() > 0) {
             comboVideojuego.setSelectedIndex(0);
         }
         spinnerVictorias.setValue(1);
 
-        // 2. Vaciar todos los registros actuales y recargar exclusivamente los 5 iniciales de fábrica
+        
         gestorPartidas.getLista().clear();
         cargarDatosEjemplo();
 
-        // 3. Actualizar la interfaz visual (lista, barra de estado y gráfico de tarta)
+        
         actualizarModeloListaUI();
         actualizarBarraEstado();
         panelDibujo.repaint();
     }
 
-    /** Añade un nuevo dato desde el formulario y refresca la interfaz. */
+    
     private void anadirDato() {
         String videojuego = (String) comboVideojuego.getSelectedItem();
         int victorias = (Integer) spinnerVictorias.getValue();
         LocalDate fecha = LocalDate.now();
 
-        // Se crea el objeto Partida y se añade a la clase contenedora Partidas
+        
         Partida nuevaPartida = new Partida(fecha, videojuego, victorias);
         gestorPartidas.anadir(nuevaPartida);
 
-        // Actualizar vistas y redibujar el gráfico manteniendo los registros
+        
         actualizarModeloListaUI();
         actualizarBarraEstado();
         panelDibujo.repaint();
         
-        // Limpiar los campos del formulario tras añadir con éxito
+        
         if (comboVideojuego.getItemCount() > 0) {
             comboVideojuego.setSelectedIndex(0);
         }
@@ -280,15 +276,15 @@ public class VentanaFormyStats extends JFrame {
         File archivo = selector.getSelectedFile();
 
         try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(archivo))) {
-            // Limpiamos la lista actual antes de cargar los datos del archivo de texto
+            
             gestorPartidas.getLista().clear();
             
             String linea;
             while ((linea = br.readLine()) != null) {
-                // Separamos los datos por el punto y coma (;)
+                
                 String[] partes = linea.split(";");
                 if (partes.length == 3) {
-                    LocalDate fecha = LocalDate.parse(partes[0]); // Formato por defecto de LocalDate: yyyy-MM-dd
+                    LocalDate fecha = LocalDate.parse(partes[0]); 
                     String videojuego = partes[1];
                     int victorias = Integer.parseInt(partes[2]);
                     
@@ -296,7 +292,7 @@ public class VentanaFormyStats extends JFrame {
                 }
             }
             
-            // Actualizamos la interfaz visual (lista, barra de estado y gráfico de tarta)
+            
             actualizarModeloListaUI();
             actualizarBarraEstado();
             panelDibujo.repaint();
@@ -313,13 +309,13 @@ public class VentanaFormyStats extends JFrame {
     if (selector.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
         File archivo = selector.getSelectedFile();
         
-        // Asegurar que termine en .txt
+        
         if (!archivo.getName().toLowerCase().endsWith(".txt")) {
             archivo = new File(archivo.getAbsolutePath() + ".txt");
         }
 
         try (java.io.PrintWriter pw = new java.io.PrintWriter(new java.io.FileWriter(archivo))) {
-            // Recorremos cada partida y la guardamos como una línea de texto: fecha;videojuego;victorias
+            
             for (Partida p : gestorPartidas.getLista()) {
                 pw.println(p.getFecha() + ";" + p.getVideojuego() + ";" + p.getVictorias());
             }
@@ -339,7 +335,7 @@ public class VentanaFormyStats extends JFrame {
     }
     FlatDarkLaf.updateUI();
     
-    // Forzar actualización de colores en el panel de dibujo
+    
     panelDibujo.repaint(); 
 }
 }

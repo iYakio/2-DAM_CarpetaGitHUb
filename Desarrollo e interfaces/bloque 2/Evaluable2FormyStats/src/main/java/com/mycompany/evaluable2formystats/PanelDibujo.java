@@ -10,10 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JPanel;
 
-/**
- * Panel de dibujo independiente que renderiza un gráfico de tarta y leyenda adaptativos al tema.
- * @author iYaki
- */
+
 public class PanelDibujo extends JPanel {
     private Partidas fuenteDatos;
 
@@ -30,19 +27,19 @@ public class PanelDibujo extends JPanel {
         int width = getWidth();
         int height = getHeight();
 
-        // Color de texto adaptativo según el tema actual de la interfaz
+        
         g2d.setColor(getForeground());
 
         g2d.drawString("Distribución de victorias", 105, 25);
 
-        // Videojuegos configurados
+        
         String[] juegos = {"NFS Pro Street", "Left 4 dead 2", "Tekken 8", "Fortnite", "Burnout 3"};
         Color[] colores = {
-            new Color(90, 150, 210),   // Azul
-            new Color(70, 180, 120),   // Verde
-            new Color(240, 90, 90),    // Rojo
-            new Color(245, 200, 60),   // Amarillo
-            new Color(175, 100, 210)   // Morado
+            new Color(90, 150, 210),   
+            new Color(70, 180, 120),   
+            new Color(240, 90, 90),    
+            new Color(245, 200, 60),   
+            new Color(175, 100, 210)   
         };
 
         int[] victoriasTotales = new int[juegos.length];
@@ -60,7 +57,7 @@ public class PanelDibujo extends JPanel {
             sumaTotal += v;
         }
 
-        // Dimensiones y posición de la tarta
+        
         int diametro = Math.min(width, height) - 140;
         int xTarta = 30;
         int yTarta = 50;
@@ -73,7 +70,7 @@ public class PanelDibujo extends JPanel {
 
         int anguloAcumulado = 0;
 
-        // Dibujar porciones de la tarta
+       
         for (int i = 0; i < juegos.length; i++) {
             int anguloArc = (int) Math.round((double) victoriasTotales[i] / sumaTotal * 360);
             
@@ -84,7 +81,7 @@ public class PanelDibujo extends JPanel {
             g2d.setColor(colores[i]);
             g2d.fillArc(xTarta, yTarta, diametro, diametro, anguloAcumulado, anguloArc);
 
-            // Separadores entre sectores con el color del fondo del panel
+            
             g2d.setColor(getBackground());
             g2d.setStroke(new java.awt.BasicStroke(2.5f));
             g2d.drawArc(xTarta, yTarta, diametro, diametro, anguloAcumulado, anguloArc);
@@ -92,7 +89,7 @@ public class PanelDibujo extends JPanel {
             anguloAcumulado += anguloArc;
         }
 
-        // Dibujar leyenda lateral
+        
         int xLeyenda = xTarta + diametro + 20;
         int yLeyenda = yTarta + 20;
 
@@ -100,13 +97,13 @@ public class PanelDibujo extends JPanel {
         g2d.drawString("Leyenda:", xLeyenda, yLeyenda - 15);
 
         for (int i = 0; i < juegos.length; i++) {
-            // Cuadrito de color
+            
             g2d.setColor(colores[i]);
             g2d.fillRect(xLeyenda, yLeyenda + (i * 25), 15, 15);
             g2d.setColor(getForeground());
             g2d.drawRect(xLeyenda, yLeyenda + (i * 25), 15, 15);
 
-            // Texto de la leyenda con color adaptativo al tema
+            
             g2d.setColor(getForeground());
             g2d.drawString(juegos[i] + " (" + victoriasTotales[i] + " v.)", xLeyenda + 25, yLeyenda + (i * 25) + 12);
         }
