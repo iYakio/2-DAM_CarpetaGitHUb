@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="Ejercicio1" language="java" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports https://jasperreports.sourceforge.net/xsd/jasperreport.xsd">
+    <parameter name="NombreUsuario" class="java.lang.String"/>
+    <parameter name="DireccionUsuario" class="java.lang.String"/>
+    <parameter name="TelefonoUsuario" class="java.lang.String"/>
+    <title height="50">
+        <element kind="staticText" x="0" y="0" width="515" height="40">
+            <text><![CDATA[Datos del usuario]]></text>
+        </element>
+    </title>
+    <detail>
+        <band height="80">
+            <element kind="textField" x="0" y="0" width="515" height="20">
+                <expression><![CDATA[$P{NombreUsuario}]]></expression>
+            </element>
+            <element kind="textField" x="0" y="25" width="515" height="20">
+                <expression><![CDATA[$P{DireccionUsuario}]]></expression>
+            </element>
+            <element kind="textField" x="0" y="50" width="515" height="20">
+                <expression><![CDATA[$P{TelefonoUsuario}]]></expression>
+            </element>
+        </band>
+    </detail>
+</jasperReport>
