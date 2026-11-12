@@ -1,0 +1,29 @@
+el estanquero pone 2 cosas
+
+Estanco datos
+Fumador 3 objetos
+Estanquero 1 objeto
+Main
+
+1.- Pensar y crear las clases
+ - Main
+ - Recursos (Mesa, Mostrador...) 1 clase SIEMPRE 
+ - Entidades (filósofos, fumadores, estanquero...) pueden haber 1 o más clases
+
+2.- Preparar los métodos de la clase recursos ( cogerxxxx() -- ocupar un recurso --, -- devolver a su estado inicial un recurso -- soltarxxxxx()  ) // pueden estar vacíos temporalmente hasta que ya les metas su código cuando llegue el momento
+
+3.- Clases entidades (personas) que llaman a los métodos y hacen pausas si es necesario
+
+4.- Completar la clase recursos (hacer que los métodos coger y soltar funcionen)
+
+------------------------------------------------------------------------------------------
+
+Barbero
+1.- Pensar y crear las clases
+ - Main
+ - Recursos (Barbería) 1 clase SIEMPRE 
+ - Entidades (Barbero, clientes) pueden haber 1 o más clases
+
+2.- Preparar los métodos de la clase recursos: 
+	- Barbero llama a: esperarCliente() (se duerme hasta que lo avisen) y terminarCorte() (avisa a quien esté esperando de que ya ha terminado)
+	- Clientes llaman a: entrar (mirar si hay sillas libres)
