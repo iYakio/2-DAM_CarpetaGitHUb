@@ -15,33 +15,28 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Declarar las variables a nivel de clase (fuera del onCreate)
+    private Button botonIr;
+    private EditText campoNombre, campoApellido;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // 1.- Crear objetos y variables
-        private Button botonIr;
-        private EditText campoNombre, campoApellido;
+        // 2.- Asociar objetos Java a XML
+        botonIr = findViewById(R.id.button_iniciar_sesion);
+        campoNombre = findViewById(R.id.Txt_Nombre);
+        campoApellido = findViewById(R.id.Txt_Apellido);
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState){
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-
-            // 2.- Asociar objetos Java a XML
-            botonIr = findViewById(R.id.button_iniciar_sesion);
-            campoNombre = findViewById(R.id.Txt_Nombre);
-            campoApellido = findViewById(R.id.Txt_Apellido);
-        }
-
-        //3.Eventos, lógica
+        // 3.- Eventos y lógica
         botonIr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,16 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent abrirPantalla = new Intent(MainActivity.this, MainActivity2.class);
 
                 // Método 1 de paso de datos: PUTEXTRA
-
                 abrirPantalla.putExtra("nombre", nombre);
                 abrirPantalla.putExtra("apellidos", apellido);
 
-
-                // Método 2 de paso de datos: clase static
                 /*
-                Almacen.setNombre(nombre);
-                Almacen.setApellido(apellido);
-
                 // Método 3 de paso de datos: SharedPreferences (XML)
                 SharedPreferences prefs = getSharedPreferences("Datos", MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
@@ -74,7 +63,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(abrirPantalla);
             }
         });
-
-
     }
 }
