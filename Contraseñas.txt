@@ -1,0 +1,50 @@
+Ubuntu Live Server Odoo
+usuario: pc111
+contraseña: Dav@nte
+
+Davante Medac
+usuario: adrian.cuevas@davante.org
+contraseña: Castulo27?
+
+Inicio de sesión
+usuario: pc111
+contraseña: vehiculo12
+
+GitHub
+Adrian2750
+usuario: adrian.cuevas@davante.org
+contraseña: Castulo27?
+carlos.fernandez@davante.es
+
+Odoo
+Usuario: adrian.cuevas@davante.org
+Contraseña: Dav@nte
+Master Password: yk8h-fs7j-ws3t
+
+
+
+Odoo Ej2
+Usuario: adrian.cuevas@davante.org
+Contraseña: Dav@nte
+Master Password: vbm7-9v2x-8hxx
+
+AWS Academy
+login: adrian.cuevas@davante.org
+Password: Castulo27?
+
+Docker
+contraseña: iYakio27
+contraseña: 11122000
+
+Vericode 
+
+Scanner sc = new Scanner(System.in);
+
+412dp
+103dp
+
+Se crea una instancia, una clase al pulsar el botón de la carpeta
+
+3 objetos de la clase dialog pasándole a cada uno 
+
+

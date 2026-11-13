@@ -48,6 +48,7 @@ alter table socio modify column telefono varchar(15);
 -- 3 -- Elimina la columna telefono
 alter table socio drop telefono;
 
+
 -- 4.- INSERTAR DATOS
 -- 1 -- Inserta tu fila en socio con id_socio = 1, tu nombre, la ciudad Malaga y tu email.
 INSERT INTO socio (nombre, ciudad, email) VALUES (
@@ -159,8 +160,7 @@ DELETE FROM socio where id_socio = 6;
 DELETE FROM monitor where id_monitor = 1;
 DELETE FROM monitor where id_monitor = 3;
 -- Sí permite borrar el numero 3 y no el numero 1, porque una vez más, el id_monitor 3 no tenía ninguan foreign key que dependiese de ella
-
-TRUNCATE TABLE nombre_tabla;
+Truncate table inscripcion;
 
 
 
