@@ -4,5 +4,12 @@
     <string name="Tu_nombre">Tu nombre</string>
     <string name="Jugar">Jugar</string>
     <string name="Ver_ranking">Ver ranking</string>
-    <string name="Titulo"></string>
+    <string name="GameIQ">Gaming IQ</string>
+    <string name="Localizador_preguntas"></string>
+    <string name="Puntos_actuales"></string>
+    <string name="resultado">Resultado</string>
+    <string name="puntos">PUNTUACIÓN</string>
+    <string name="Ver_ranking_Resultado">Ver ranking</string>
+    <string name="Volver_al_inicio">Volver al inicio</string>
+    <string name="Ranking">Ranking</string>
 </resources>

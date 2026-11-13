@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Gris_fondo"
+    tools:context=".ResultadoActivity">
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/resultado"
+        android:textColor="@color/Blanco_letras"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNombre"
+        android:layout_width="231dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="88dp"
+        android:textAlignment="center"
+        android:textColor="@color/Blanco_letras"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultado" />
+
+    <TextView
+        android:id="@+id/txtPuntuacion"
+        android:layout_width="305dp"
+        android:layout_height="222dp"
+        android:layout_marginTop="21dp"
+        android:gravity="center_vertical"
+        android:text="10 / 10"
+        android:textAlignment="center"
+        android:textColor="@color/Botones_naranja"
+        android:textSize="96sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+    <TextView
+        android:id="@+id/txtPuntos_Resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/puntos"
+        android:textColor="@color/Blanco_letras"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPuntuacion" />
+
+    <Button
+        android:id="@+id/btnVerRanking_Resultado"
+        android:layout_width="301dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="@color/Botones_naranja"
+        android:text="@string/Ver_ranking_Resultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPuntos_Resultado" />
+
+    <Button
+        android:id="@+id/btnVolverInicio"
+        android:layout_width="301dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="33dp"
+        android:backgroundTint="@color/Botones_naranja"
+        android:text="@string/Volver_al_inicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerRanking_Resultado" />
+</androidx.constraintlayout.widget.ConstraintLayout>
