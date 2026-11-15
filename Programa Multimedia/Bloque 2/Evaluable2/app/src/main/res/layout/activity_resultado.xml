@@ -40,8 +40,6 @@
         android:layout_height="222dp"
         android:layout_marginTop="21dp"
         android:gravity="center_vertical"
-        android:text="10 / 10"
-        android:textAlignment="center"
         android:textColor="@color/Botones_naranja"
         android:textSize="96sp"
         app:layout_constraintEnd_toEndOf="parent"

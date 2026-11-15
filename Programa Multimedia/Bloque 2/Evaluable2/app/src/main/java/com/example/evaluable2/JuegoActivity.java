@@ -38,10 +38,10 @@ public class JuegoActivity extends AppCompatActivity {
             {"A) Mario", "B) Link", "C) Sonic the Hedgehog", "D) Pac-Man"}
     };
 
-    // Índice (0 a 3) de la respuesta correcta de cada pregunta
+
     private final int[] correctas = {1, 1, 2, 2, 0};
 
-    // Un GIF distinto para cada pregunta
+
     private final int[] gifs = {
             R.raw.resident_evil_2,
             R.raw.promised_radahn,
@@ -52,7 +52,7 @@ public class JuegoActivity extends AppCompatActivity {
 
     private int actual = 0;
     private int puntos = 0;
-    private final int PUNTOS_POR_ACIERTO = 10 / preguntas.length; // 2 con 5 preguntas
+    private final int PUNTOS_POR_ACIERTO = 10 / preguntas.length;
     private String nombre;
 
     private TextView txtProgreso, txtPuntos, txtPregunta;
@@ -99,16 +99,16 @@ public class JuegoActivity extends AppCompatActivity {
     }
 
     private void responder(int elegida) {
-        for (Button b : botones) b.setEnabled(false); // evita doble pulsación
+        for (Button b : botones) b.setEnabled(false);
 
         if (elegida == correctas[actual]) {
             puntos += PUNTOS_POR_ACIERTO;
             txtPuntos.setText("Puntos: " + puntos);
 
-            // Diálogo flotante en mitad de la pantalla con el GIF
+
             Dialog dialogo = new Dialog(this);
             dialogo.setContentView(R.layout.dialog_gif);
-            dialogo.setCancelable(false); // no se cierra al tocar fuera ni con atrás
+            dialogo.setCancelable(false);
             if (dialogo.getWindow() != null) {
                 dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             }
@@ -116,7 +116,7 @@ public class JuegoActivity extends AppCompatActivity {
             Glide.with(this).asGif().load(gifs[actual]).into(ivDialogo);
             dialogo.show();
 
-            // A los 10 segundos se cierra el diálogo y se pasa a la siguiente pregunta
+
             new Handler(Looper.getMainLooper()).postDelayed(() -> {
                 if (dialogo.isShowing()) dialogo.dismiss();
                 siguiente();
@@ -135,7 +135,7 @@ public class JuegoActivity extends AppCompatActivity {
             i.putExtra("nombre", nombre);
             i.putExtra("puntos", puntos);
             startActivity(i);
-            finish(); // no se puede volver a la partida
+            finish();
         }
     }
 

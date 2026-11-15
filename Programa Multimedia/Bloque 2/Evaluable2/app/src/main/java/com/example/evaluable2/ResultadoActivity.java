@@ -27,7 +27,7 @@ public class ResultadoActivity extends AppCompatActivity {
         txtNombre.setText("Partida de " + nombre);
         txtPuntuacion.setText(puntos + " / 10");
 
-        // Se guarda al abrirse, sin pulsar nada
+
 
         try {
             new BasedeDatos(this).guardarPartida(nombre, puntos);
@@ -35,7 +35,7 @@ public class ResultadoActivity extends AppCompatActivity {
             System.out.println("Error con la base de datos");
         }
 
-        // Sonido de fin de partida
+
         MediaPlayer mp = MediaPlayer.create(this, R.raw.final_de_partida);
         mp.setOnCompletionListener(MediaPlayer::release);
         mp.start();
