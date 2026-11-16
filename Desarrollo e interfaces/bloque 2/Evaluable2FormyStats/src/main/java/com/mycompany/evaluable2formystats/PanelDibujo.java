@@ -2,6 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
+/**
+ * Panel que dibuja un gráfico de tarta con las victorias de cada videojuego,
+ * junto con un título y una leyenda. Lee los datos de un objeto
+ * {@link Partidas}, por lo que se actualiza al volver a pintarlo, y se adapta
+ * al tema claro u oscuro.
+ *
+ * @author pc111
+ */
 package com.mycompany.evaluable2formystats;
 
 import java.awt.Color;

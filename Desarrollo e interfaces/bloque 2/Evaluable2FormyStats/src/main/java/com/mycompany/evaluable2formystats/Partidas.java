@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * que los datos que se añaden en el formulario son los que se dibujan en el
  * gráfico.
  *
- * @author iYaki
+ * @author pc111
  */
 public class Partidas {
     private ArrayList<Partida> lista = new ArrayList<>();

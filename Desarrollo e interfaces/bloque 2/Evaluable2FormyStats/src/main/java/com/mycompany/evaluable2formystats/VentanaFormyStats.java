@@ -2,6 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
+/**
+ * Ventana principal de la aplicación. Reúne el menú, la barra de
+ * herramientas, el formulario para añadir partidas, la lista de registros,
+ * la barra de estado y el panel con el gráfico. También guarda y abre los
+ * datos en archivos de texto y genera el informe en PDF.
+ *
+ * @author pc111
+ */
 package com.mycompany.evaluable2formystats;
 
 import com.formdev.flatlaf.FlatDarkLaf;
