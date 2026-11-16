@@ -9,8 +9,11 @@ import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.DefaultListModel;
@@ -31,6 +34,12 @@ import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 import javax.swing.SpinnerNumberModel;
 import net.miginfocom.swing.MigLayout;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 
 
 public class VentanaFormyStats extends JFrame {
@@ -72,9 +81,58 @@ public class VentanaFormyStats extends JFrame {
     private Action actionGenerarInforme = new AbstractAction("Generar informe") {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(VentanaFormyStats.this, "El informe en PDF todavía no está disponible.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(VentanaFormyStats.this, "Elija donde guardar su PDF.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            generarInforme();
         }
     };
+    
+    private void generarInforme() {
+    // El usuario elige dónde guardar; por defecto, su carpeta personal (nunca una ruta relativa)
+    JFileChooser selector = new JFileChooser();
+    selector.setDialogTitle("Guardar informe PDF");
+    selector.setSelectedFile(new File(System.getProperty("user.home"), "informe_partidas.pdf"));
+    if (selector.showSaveDialog(this) != JFileChooser.APPROVE_OPTION) {
+        return;
+    }
+    File destino = selector.getSelectedFile();
+    if (!destino.getName().toLowerCase().endsWith(".pdf")) {
+        destino = new File(destino.getAbsolutePath() + ".pdf");
+    }
+
+    try (InputStream plantilla = getClass().getResourceAsStream("/Informe.jrxml")) {
+        if (plantilla == null) {
+            throw new IllegalStateException("No se encuentra Informe.jrxml en resources");
+        }
+        JasperReport informe = JasperCompileManager.compileReport(plantilla);
+
+        // Listado: una línea por partida, usando los getters
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        StringBuilder listado = new StringBuilder();
+        for (Partida p : gestorPartidas.getLista()) {
+            listado.append(p.getFecha().format(formato)).append("  -  ")
+                   .append(p.getVideojuego()).append("  -  ")
+                   .append(p.getVictorias()).append(" victorias\n");
+        }
+
+        Map<String, Object> parametros = new HashMap<>();
+        parametros.put("TituloInforme", "Informe de mis partidas de videojuegos");
+        parametros.put("NumeroRegistros", gestorPartidas.getCantidadRegistros());
+        parametros.put("TotalVictorias", gestorPartidas.getTotalVictorias());
+        parametros.put("ListadoPartidas", listado.toString());
+
+        JasperPrint impresion = JasperFillManager.fillReport(informe, parametros, new JREmptyDataSource());
+        JasperExportManager.exportReportToPdfFile(impresion, destino.getAbsolutePath());
+
+        JOptionPane.showMessageDialog(this,
+                "Informe guardado en:\n" + destino.getAbsolutePath(),
+                "Informe generado", JOptionPane.INFORMATION_MESSAGE);
+    } catch (Exception ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this,
+                "No se ha podido generar el informe:\n" + ex.getMessage(),
+                "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
     
     private Action actionCambiarTema = new AbstractAction("Cambiar tema") {
         @Override

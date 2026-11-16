@@ -37,7 +37,9 @@ public class CalculadoraNota {
     
     public static double notaFinal(double numEx, double numPracticas, double numCompetencias){
         
-        return 
+        return (numEx * 0.30) + (numPracticas * 0.60) + (numCompetencias * 0.10);
+    }
+    
     }
     
    
