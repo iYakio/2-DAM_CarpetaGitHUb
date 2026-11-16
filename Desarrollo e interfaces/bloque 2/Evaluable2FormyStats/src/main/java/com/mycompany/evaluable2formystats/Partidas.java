@@ -43,7 +43,8 @@ public class Partidas {
     public int getTotalVictorias() {
         int total = 0;
         for (Partida p : lista) {
-            total += p.getVictorias();
+           total += p.getVictorias();
+           
         }
         return total;
     }
