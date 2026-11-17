@@ -38,7 +38,7 @@
         android:id="@+id/txtPuntuacion"
         android:layout_width="305dp"
         android:layout_height="222dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:textColor="@color/Botones_naranja"
         android:textSize="96sp"

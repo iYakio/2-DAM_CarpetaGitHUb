@@ -73,6 +73,82 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
             </plugin>
+            
+            <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.6.2</version>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>shade</goal>
+            </goals>
+            <configuration>
+                <!-- Mismo nombre que con assembly: ...-jar-with-dependencies.jar -->
+                <shadedArtifactAttached>true</shadedArtifactAttached>
+                <shadedClassifierName>jar-with-dependencies</shadedClassifierName>
+                <createDependencyReducedPom>false</createDependencyReducedPom>
+                <!-- Quita las firmas de las librerías, que dejan de valer al juntarlas -->
+                <filters>
+                    <filter>
+                        <artifact>*:*</artifact>
+                        <excludes>
+                            <exclude>META-INF/*.SF</exclude>
+                            <exclude>META-INF/*.DSA</exclude>
+                            <exclude>META-INF/*.RSA</exclude>
+                        </excludes>
+                    </filter>
+                </filters>
+                <transformers>
+                    <!-- La clase principal -->
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                        <mainClass>${exec.mainClass}</mainClass>
+                    </transformer>
+                    <!-- Junta los ficheros de servicios de todas las librerías -->
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                    <!-- Junta las extensiones de JasperReports (núcleo + PDF) -->
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                        <resource>jasperreports_extension.properties</resource>
+                    </transformer>
+                </transformers>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+            
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>2.7.0</version>
+                <executions>
+                    <execution>
+                        <id>crear-exe</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Aplicación de ventana: sin consola negra -->
+                            <headerType>gui</headerType>
+                            <!-- El JAR que se mete dentro del .exe -->
+                            <jar>${project.build.directory}/${project.artifactId}-${project.version}-jar-with-dependencies.jar</jar>
+                            <!-- Dónde se crea el .exe. En dist/ y no en target/: Clean and Build
+                                 vacía target y se llevaría por delante la carpeta jre -->
+                            <outfile>${project.basedir}/dist/NotaFinal.exe</outfile>
+                            <!-- Título de la ventana de error si no encuentra Java -->
+                            <errTitle>Nota final</errTitle>
+                            <!-- Icono del .exe, junto al pom.xml. Si no hay icono, se borra esta línea -->
+                            <!-- <icon>${project.basedir}/icono.ico</icon> -->
+                            <jre>
+                                <!-- Java se busca en la carpeta jre que está junto al .exe -->
+                                <path>jre</path>
+                            </jre>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
         </plugins>
     </build>
     <name>Evaluable2FormyStats</name>
