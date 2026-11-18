@@ -4,6 +4,7 @@ public class Camarero extends Thread {
     private final int platos;
     private final Bandeja bandeja;
     private final Random random = new Random();
+    
 
     public Camarero(int platos, Bandeja bandeja) {
         super("Camarero");
